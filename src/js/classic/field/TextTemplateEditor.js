@@ -1,33 +1,7 @@
-Ext.define('Tualo.quill.form.field.TextTemplateEditor', {
-    extend: 'Ext.form.field.TextArea',
-    alias: ['widget.tualo_quill_texttemplateeditor'],
+Ext.define('Tualo.quill.form.field.QuillTextTemplateEditor', {
+    extend: 'Tualo.quill.form.field.Editor',
+    alias: ['widget.tualo_quill_texttemplate_editor'],
     language: null,
-
-    height: 300,
-
-    fieldSubTpl: [ // note: {id} here is really {inputId}, but {cmpId} is available 
-        '<input id="{id}" data-ref="inputEl" type="hidden" {inputAttrTpl}',
-        ' size="1"', // allows inputs to fully respect CSS widths across all browsers 
-        '<tpl if="name"> name="{name}"</tpl>',
-        '<tpl if="value"> value="{value}"</tpl>',
-        '<tpl if="placeholder"> placeholder="{placeholder}"</tpl>',
-        '{%if (values.maxLength !== undefined){%} maxlength="{maxLength}"{%}%}',
-        '<tpl if="readOnly"> readonly="readonly"</tpl>',
-        '<tpl if="disabled"> disabled="disabled"</tpl>',
-        '<tpl if="tabIdx != null"> tabindex="{tabIdx}"</tpl>',
-        '<tpl if="fieldStyle"> style="{fieldStyle}"</tpl>',
-        '<tpl foreach="inputElAriaAttributes"> {$}="{.}"</tpl>',
-        ' class="{fieldCls} {typeCls} {typeCls}-{ui} {editableCls} {inputCls}" autocomplete="off"/>',
-        '<div id="{id}-quilleditor"  data-ref="inputEl" rows="1" {inputAttrTpl} style="background-color: white;">',
-        '<tpl if="value">{[values.value]}</tpl>',
-        '<div id="{id}-quilleditor-toolbar"></div>',
-        '</div>'
-        ,
-        {
-            disableFormats: true
-        }
-    ],
-
 
     initComponent: function () {
         var me = this;
