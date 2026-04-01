@@ -1,0 +1,25 @@
+{
+  "name": "tualo/texttemplates",
+  "description": "texttemplates tualo office",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Hoffmann",
+      "email": "thomas.hoffmann@tualo.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Tualo\\Office\\TextTemplates\\": "src/"
+    },
+    "files": [
+      "src/functions.php"
+    ]
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "tualo/quill": "^1.0"
+  },
+  "version": "1.0.1"
+}
